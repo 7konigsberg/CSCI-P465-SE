@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title> Arithmetic</title>
+    <h1>Arithmetic</h1>
+ </head>
+<body>
+
+    <section>
+        <input id="first"/> + <input id="second"/>
+        <button onclick="add()">=</button> <input id="answer"/>
+    </section>
+
+    <script>
+        async function add() {
+            const operand1Input = document.getElementById("first");
+            const operand2Input = document.getElementById("second");
+            let n = operand1Input.value;
+            let m = operand2Input.value;
+            const response = await fetch("http://localhost:3000/add/" + n + "/" + m);
+            const sum = await response.json();
+            document.getElementById("answer").value = sum;
+        }
+    </script>
+    
+</body>
+</html>
