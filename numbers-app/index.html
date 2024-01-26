@@ -12,6 +12,13 @@
     </section>
 
     <script>
+        function add_old() {
+            let numOne = parseInt(document.getElementById("first").value);
+            let numTwo = parseInt(document.getElementById("second").value);
+            let sum = numOne + numTwo;
+            document.getElementById("answer").value = sum;
+        }
+
         async function add() {
             const operand1Input = document.getElementById("first");
             const operand2Input = document.getElementById("second");
