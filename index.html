@@ -61,7 +61,7 @@
                 <h2>Caesar Decipher</h2>
                 <label>Text:</label>
                 <input id="textToCipher" />
-                <button onclick="cipher()">Check</button>
+                <button onclick="cipher()">Shift</button>
                 <label id="cipher"></label>
             </section>
         </div>
@@ -133,7 +133,7 @@
         async function cipher() {
             const numberToTest = document.getElementById("textToCipher")
             let plainText = numberToTest.value;
-            const response = await fetch("https://ciphers-service-zzahid.onrender.com/ciphers/" + plainText);
+            const response = await fetch("https://ciphers-service-zzahid.onrender.com/ciphers/caesar/" + plainText + "/1");
             const result = await response.json();
             document.getElementById("cipher").innerText = result;
         }
